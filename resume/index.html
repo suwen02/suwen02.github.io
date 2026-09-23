@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Suwen Mei</title>
+  <meta name="description" content="Resume of Suwen Mei — computer science student, researcher, and software engineer.">
+  <meta property="og:title" content="Resume — Suwen Mei">
+  <meta property="og:description" content="Computer science, systems, AI/ML, and full-stack engineering experience.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://suwen02.github.io/resume/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' rx='6' fill='%2314b8a6'/><text x='14' y='20' text-anchor='middle' font-size='16' font-weight='bold' fill='white' font-family='monospace'>S</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --surface-2: #101010;
+      --border: #262626;
+      --text: #ededed;
+      --muted: #a1a1aa;
+      --accent: #14b8a6;
+      --accent-dim: #0f766e;
+      --body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    .page { max-width: 920px; margin: 0 auto; padding: 28px 28px 64px; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 34px;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+    }
+    .home-link, .print-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      border-radius: 7px;
+      padding: 7px 11px;
+    }
+    .home-link:hover, .print-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .print-btn { cursor: pointer; font-family: inherit; }
+    .hero {
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(180deg, #151515 0%, #101010 100%);
+      margin-bottom: 20px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 3.45rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+    .role {
+      margin: 12px 0 20px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.86rem;
+    }
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px 16px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    .contact a { color: var(--muted); }
+    .contact a:hover { color: var(--accent); }
+    .section {
+      padding: 30px 6px;
+      border-top: 1px solid var(--border);
+    }
+    .section-title {
+      margin: 0 0 20px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+    .entry { margin-bottom: 26px; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px 20px;
+      align-items: baseline;
+      margin-bottom: 7px;
+    }
+    .entry-title { font-weight: 700; font-size: 1rem; }
+    .entry-subtitle { color: var(--muted); font-size: 0.9rem; margin-top: 2px; }
+    .entry-date {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      white-space: nowrap;
+    }
+    .entry-link {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+    }
+    .entry-link:hover { text-decoration: underline; }
+    ul { margin: 10px 0 0; padding-left: 1.2rem; }
+    li { margin: 7px 0; color: #d4d4d8; font-size: 0.91rem; }
+    li::marker { color: var(--accent-dim); }
+    .skills {
+      display: grid;
+      gap: 9px;
+      font-size: 0.91rem;
+    }
+    .skills strong { color: var(--text); font-weight: 600; }
+    .skills span { color: var(--muted); }
+    .meta-line { color: var(--muted); font-size: 0.89rem; margin-top: 4px; }
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-align: center;
+    }
+    @media (max-width: 680px) {
+      .page { padding: 18px 18px 48px; }
+      .topbar { margin-bottom: 20px; }
+      .hero { padding: 24px 20px; border-radius: 12px; }
+      .section { padding: 26px 2px; }
+      .entry-head { grid-template-columns: 1fr; gap: 3px; }
+      .entry-date { white-space: normal; }
+      li { font-size: 0.88rem; }
+    }
+    @media print {
+      :root { --bg: #fff; --surface: #fff; --surface-2: #fff; --border: #d4d4d4; --text: #111; --muted: #4b5563; --accent: #0f766e; --accent-dim: #0f766e; }
+      body { background: #fff; color: #111; font-size: 10.5pt; }
+      .page { max-width: none; padding: 0; }
+      .topbar, footer { display: none; }
+      .hero { padding: 0 0 16px; border: 0; border-radius: 0; background: none; margin: 0; }
+      h1 { font-size: 27pt; }
+      .section { padding: 15px 0; break-inside: avoid; }
+      .entry { break-inside: avoid; margin-bottom: 16px; }
+      a { color: inherit; }
+      li { color: #222; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="topbar" aria-label="Resume navigation">
+      <a class="home-link" href="/">← Home</a>
+      <button class="print-btn" type="button" onclick="window.print()">Print / Save PDF</button>
+    </nav>
+
+    <header class="hero">
+      <h1>SUWEN MEI</h1>
+      <p class="role">Computer Science & Engineering · Systems · AI/ML · Full-Stack</p>
+      <div class="contact">
+        <span>Berkeley, CA</span>
+        <a href="tel:+13412396685">(341) 239-6685</a>
+        <a href="mailto:suwenmei@berkeley.edu">suwenmei@berkeley.edu</a>
+        <a href="https://github.com/suwen02" target="_blank" rel="noopener">github.com/suwen02</a>
+        <a href="https://www.linkedin.com/in/suwen-mei-60a2ab433" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://suwen-blog.vercel.app/en" target="_blank" rel="noopener">suwen-blog.vercel.app/en</a>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <div class="entry-title">The Chinese University of Hong Kong, Shenzhen (CUHK-Shenzhen)</div>
+            <div class="entry-subtitle">B.Eng. Computer Science and Engineering · GPA 3.734/4.000 · Dean's List: 2024-25, 2025-26</div>
+          </div>
+          <div class="entry-date">Expected Jun 2028</div>
+        </div>
+        <p class="meta-line">Relevant coursework: Computer Systems (A), Computer Networks (A), Data Structures & Advanced Programming (A-), Machine Learning (A-).</p>
+      </article>
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <div class="entry-title">University of California, Berkeley</div>
+            <div class="entry-subtitle">Berkeley Global Computing and Data Science Program · Visiting Undergraduate</div>
+          </div>
+          <div class="entry-date">Aug 2026 - May 2027</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills">
+        <div><strong>Languages:</strong> <span>Python, Java, TypeScript/JavaScript, C++, SQL</span></div>
+        <div><strong>Systems / Backend:</strong> <span>Linux, Git, CI/CD, REST APIs, Flask, PostgreSQL/SQLite, Socket Programming, regression/acceptance testing</span></div>
+        <div><strong>Web:</strong> <span>Next.js, React, Supabase, Vercel</span></div>
+        <div><strong>AI/ML & Information Retrieval:</strong> <span>PyTorch, scikit-learn, LightGBM, Polars, RAG, retrieval/reranking, LoRA fine-tuning</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Research & Engineering Experience</h2>
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <div class="entry-title">Zhihai Xinghe (ZDeep) — Algorithm Intern</div>
+          </div>
+          <div class="entry-date">May 2026 - Aug 2026</div>
+        </div>
+        <ul>
+          <li>Engineered a stateful multi-turn LLM user simulator and fine-tuned DiffusionGemma-26B via LoRA on 10.7k dialogue turns, improving terminal-state consistency by 37.5% and reaching 86.7% paired fidelity.</li>
+          <li>Reworked retrieval/reranking with Qwen-based selection, threshold sweeps, and RRF fusion; improved precision from 26.7% to 52.4% and F1 from 37.8% to 58.2% at 65.5% recall, while cutting reranking latency by 57% and end-to-end critical-path latency by 27%.</li>
+          <li>Built same-batch A/B evaluation, regression tests, profiling, and deterministic fallbacks; recovered 100% of observed generation failures on a 777-case holdout and isolated upstream data drift from model defects.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <div class="entry-title">Phoenix Lab, CUHK-Shenzhen — Research Assistant</div>
+          </div>
+          <div class="entry-date">Oct 2025 - Present</div>
+        </div>
+        <ul>
+          <li>Co-authored “BlimpMate: A Long-Endurance Flying Display for Hands-Free Intelligent Interaction,” accepted to ACM UIST 2026; implemented Python/Flask and MCP backend integrations connecting voice AI, vision, media, reminders, and networked devices.</li>
+          <li>Built capability-status and scenario-audit APIs plus integration tests to distinguish live versus simulated paths and constrain sensitive controls; shipped the public research showcase and technical demonstrations.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Selected Projects</h2>
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <div class="entry-title">Local Agent Control Plane & Code Retrieval Infrastructure</div>
+            <div class="entry-subtitle">SQLite, Socket Programming, MCP · Personal, closed-source</div>
+          </div>
+          <div class="entry-date">Jun 2026 - Present</div>
+        </div>
+        <ul>
+          <li>Developed a three-repository systems stack separating read-only code/context retrieval, workflow orchestration, and bounded local execution; implemented durable state, immutable artifacts, idempotent replay/recovery, and fail-closed authority boundaries.</li>
+          <li>Built revision-pinned code retrieval across lexical search, AST parsing, and SCIP symbol graphs, with acceptance tests for restart, cancellation, tamper, and failure cases.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <div class="entry-title">Multilingual Technical Platform</div>
+            <div class="entry-subtitle">Next.js, TypeScript, Supabase/PostgreSQL, Vercel</div>
+            <a class="entry-link" href="https://suwen-blog.vercel.app" target="_blank" rel="noopener">suwen-blog.vercel.app ↗</a>
+          </div>
+          <div class="entry-date">Apr 2026 - Present</div>
+        </div>
+        <ul>
+          <li>Built and deployed authentication, row-level security, 8 API routes, scheduled GitHub/content synchronization, 10 versioned SQL migrations, and 21 verification scripts covering auth, backend, routes, sync, and UI regressions.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <div class="entry-title">Shanghai Probabilistic Weather Forecasting</div>
+            <div class="entry-subtitle">Python, LightGBM, scikit-learn</div>
+            <a class="entry-link" href="https://github.com/suwen02/shanghai-weather-forecast" target="_blank" rel="noopener">github.com/suwen02/shanghai-weather-forecast ↗</a>
+          </div>
+          <div class="entry-date">Mar 2026 - Apr 2026</div>
+        </div>
+        <ul>
+          <li>Built a tested forecasting pipeline integrating 5 NWP ensemble systems with 161 members, LightGBM quantile regression, conformal calibration, scheduled inference, and time-series validation; deployed live probabilistic forecasts.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Additional</h2>
+      <div class="skills">
+        <div><strong>Languages:</strong> <span>Mandarin Chinese (native); English (professional working proficiency)</span></div>
+        <div><strong>Interests:</strong> <span>J-pop, guitar, hiking, photography, philosophy, Formula 1</span></div>
+      </div>
+    </section>
+
+    <footer>HTML resume adapted from SuwenMei_Resume.pdf · <a href="/">suwen02.github.io</a></footer>
+  </main>
+</body>
+</html>
